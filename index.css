@@ -1,0 +1,332 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Luxury Minimalist Design System - Warm Neutral Palette */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Primary Backgrounds - Dark theme */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #141414;
+    --bg-subtle: #1a1a1a;
+    --bg-card: #111111;
+    
+    /* Text Hierarchy - Light on dark */
+    --text-primary: #ffffff;
+    --text-secondary: #b4b4b4;
+    --text-light: #666666;
+    --text-meta: #999999;
+    
+    /* Interactive States */
+    --interactive-base: #ffffff;
+    --interactive-hover: #e0e0e0;
+    --focus-outline: #ffffff;
+    
+    /* Vibrant Color Accents */
+    --accent-blue: #00d4ff;
+    --accent-purple: #a855f7;
+    --accent-green: #00ff88;
+    --accent-orange: #ff6b35;
+    --accent-pink: #ff0080;
+    --accent-yellow: #ffd700;
+    
+    /* Borders & Separators */
+    --border-light: #2a2a2a;
+    --border-medium: #333333;
+    --border-subtle: rgba(255,255,255,0.1);
+    
+    /* Functional Colors */
+    --status-error: #ff4444;
+    --status-success: #00ff88;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Typography System */
+.hero-large {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+.hero-medium {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.33;
+    color: var(--text-primary);
+}
+
+.heading-1 {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+.heading-2 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+.heading-3 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--text-primary);
+}
+
+.body-large {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--text-primary);
+}
+
+.body-regular {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.body-small {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+/* Button Styles - Sharp, Modern Design with Color */
+.btn-primary {
+    background: var(--accent-blue);
+    color: #0a0a0a;
+    border: 2px solid var(--accent-blue);
+    border-radius: 0px;
+    padding: 19px 32px;
+    min-width: 180px;
+    height: 60px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(.645,.045,.355,1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--accent-blue);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--accent-purple);
+    color: var(--accent-purple);
+    border-radius: 0px;
+    padding: 19px 32px;
+    min-width: 180px;
+    height: 60px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(.645,.045,.355,1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-secondary:hover {
+    background: var(--accent-purple);
+    color: #0a0a0a;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+    transition: all 0.2s cubic-bezier(.645,.045,.355,1);
+}
+
+.hover-lift {
+    transition: transform 0.2s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+
+/* Spacing System */
+.section-padding {
+    padding: 120px 0;
+}
+
+.section-padding-small {
+    padding: 80px 0;
+}
+
+@media (max-width: 1024px) {
+    .hero-large {
+        font-size: 36px;
+    }
+    
+    .hero-medium {
+        font-size: 28px;
+    }
+    
+    .heading-1 {
+        font-size: 32px;
+    }
+    
+    .heading-2 {
+        font-size: 24px;
+    }
+    
+    .section-padding {
+        padding: 80px 0;
+    }
+    
+    .section-padding-small {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-large {
+        font-size: 28px;
+    }
+    
+    .hero-medium {
+        font-size: 22px;
+    }
+    
+    .heading-1 {
+        font-size: 24px;
+    }
+    
+    .heading-2 {
+        font-size: 20px;
+    }
+    
+    .section-padding {
+        padding: 60px 0;
+    }
+    
+    .section-padding-small {
+        padding: 40px 0;
+    }
+    
+    .btn-primary {
+        min-width: 100%;
+        padding: 16px 24px;
+        height: 52px;
+    }
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 0 0% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 3.9%;
+        --primary: 0 0% 9%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 0 0% 96.1%;
+        --secondary-foreground: 0 0% 9%;
+        --muted: 0 0% 96.1%;
+        --muted-foreground: 0 0% 45.1%;
+        --accent: 0 0% 96.1%;
+        --accent-foreground: 0 0% 9%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 89.8%;
+        --input: 0 0% 89.8%;
+        --ring: 0 0% 3.9%;
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0rem;
+    }
+    
+    .dark {
+        --background: 0 0% 3.9%;
+        --foreground: 0 0% 98%;
+        --card: 0 0% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --popover: 0 0% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 0 0% 9%;
+        --secondary: 0 0% 14.9%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 0 0% 14.9%;
+        --muted-foreground: 0 0% 63.9%;
+        --accent: 0 0% 14.9%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 14.9%;
+        --input: 0 0% 14.9%;
+        --ring: 0 0% 83.1%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
